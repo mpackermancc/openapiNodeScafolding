@@ -10,7 +10,7 @@ This script generates an Express web server app using the openapi-backend librar
 - each path/verb must have a unique operation ID that mimics the folder structure of the handlers.  Here are some examples of how the operationId should be set:
     - GET /hello:  "operationId": "hello_get"
     - POST /hello:  "operationId": "hello_post"
-    - GET /persons/{id}/addresses:  "operationId": "person_{id}_addresses_get"
+    - GET /persons/{id}/addresses:  "operationId": "persons_{id}_addresses_get"
 ## 2.  Save the OpenAPI spec in the same directory as this script
 ## 3.  Run these BASH commands:
 ### 1. Create and enter your new project folder
