@@ -6,6 +6,7 @@ This script generates an Express web server app using the openapi-backend librar
 
 # Instructions for Creating the App
 ## 1.  Create a valid OpenAPI 3.0 specification in JSON format:
+This step is important to perform in a thorough manner.  Once the app is generated from this spec, there is no script to incrementally update app if the OpenAPI spec changes, so future changes are manually applied.
 - use the Swagger Editor to assist in validation of the spec: https://editor.swagger.io/
 - each path/verb must have a unique operation ID that mimics the folder structure of the handlers.  Here are some examples of how the operationId should be set:
     - GET /hello:  "operationId": "hello_get"
