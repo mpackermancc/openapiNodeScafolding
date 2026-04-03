@@ -1,0 +1,148 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "v1.0",
+        "title": "Hello World",
+        "description": "This is an example for generating a Node app scafold from an OpenAPI spec"
+    },
+    "paths": {
+        "/hello": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "success response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responseGetHello"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "firstname",
+                        "in": "query",
+                        "description": "The first name of the person to say hello to.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "lastname",
+                        "in": "query",
+                        "description": "The last name of the person to say hello to.",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "laterDate",
+                        "in": "query",
+                        "description": "The future date to wait to say hello.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    }
+                ],
+                "operationId": "hello_get"
+            },
+            "post": {
+                "responses": {
+                    "200": {
+                        "description": "success response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responseGetHello"
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/requestPostHello"
+                            }
+                        }
+                    }
+                },
+                "operationId": "hello_post"
+            }
+        },
+        "/time/{offset}/show": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "success response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/responseGetTime"
+                                }
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "offset",
+                        "in": "path",
+                        "description": "The hours offset from GMT for which you would like time returned",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "operationId": "time_{offset}_show_get"
+            }
+        }        
+    },
+    "components": {
+      "schemas": {
+        "responseGetHello": {
+            "type": "object",
+            "properties": {
+              "message": {
+                "type": "string"
+              },
+              "success": {
+                "type": "boolean"
+              },
+              "createdAt": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+        },
+        "requestPostHello": {
+            "type": "object",
+            "properties": {
+              "newMessage": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "newMessage"
+            ]
+        },
+        "responseGetTime": {
+            "type": "object",
+            "properties":{
+                "currentTime": {
+                    "type": "string",
+                    "format": "date-time"
+                }
+            } 
+        }
+      }
+    }
+}
