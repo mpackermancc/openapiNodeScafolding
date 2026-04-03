@@ -24,6 +24,8 @@ This script generates an Express web server app using the openapi-backend librar
 ### 3. Run the scaffold script (assuming is in same parent folder as your project)
 `node ../openapiNodeScafolding/scaffold.js ../openapiNodeScafolding/your-spec.json`
 
-## 6.  Open the new folder in VS Code (BASH:  code .)
+## 6.  Open the new folder in VS Code
+BASH:  `code .`
+
 ## 7.  Run the app 
 BASH:  `node app`
