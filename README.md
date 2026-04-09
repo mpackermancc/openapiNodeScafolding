@@ -23,7 +23,7 @@ This step is important to perform in a thorough manner.  Once the app is generat
 `npm install express openapi-backend ajv-formats`
 
 ### 3. Run the scaffold script (assuming is in same parent folder as your project)
-`node ../openapiNodeScafolding/scaffold.js ../openapiNodeScafolding/your-spec.json`
+`node ../openapiNodeScafolding/scafold.js ../openapiNodeScafolding/your-spec.json`
 
 ## 6.  Open the new folder in VS Code
 BASH:  `code .`
